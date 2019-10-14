@@ -1,7 +1,11 @@
 import React, { Component } from "react";
 
-export default class DimensionConfigurator extends Component {
+class DimensionConfigurator extends Component<{
+  dimension: "width" | "heigth";
+}> {
   render() {
-    return <p>I'm a DimensionConfigurator</p>;
+    return <p>I'm a {this.props.dimension} configurator</p>;
   }
 }
+
+export default DimensionConfigurator;

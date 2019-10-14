@@ -6,8 +6,8 @@ export default class SquareConfigurator extends Component {
     return (
       <div>
         <p>Hello I'm a square configurator</p>
-        <DimensionConfigurator />
-        <DimensionConfigurator />
+        <DimensionConfigurator dimension={"heigth"} />
+        <DimensionConfigurator dimension={"width"} />
       </div>
     );
   }
