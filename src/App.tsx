@@ -16,8 +16,8 @@ export default class App extends React.PureComponent<IProps, IState> {
     return (
       <div>
         <p>Hello TypeScript world</p>
-        <SquareConfigurator />
         <RGBColorPicker />
+        <SquareConfigurator />
       </div>
     );
   }

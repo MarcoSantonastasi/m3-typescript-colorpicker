@@ -9,46 +9,47 @@ interface IonChangeCallback {
   (configuratorName: string, lengthValue: number): void;
 }
 
-interface DimConfProps {
+interface IProps {
   dimension: Dimension;
   length: number;
   onChangeCallback: IonChangeCallback;
 }
 
-interface DimConfState {}
+interface IState {}
 
-export default class DimensionConfigurator extends Component<
-  DimConfProps,
-  DimConfState
-> {
+export default class DimensionConfigurator extends Component<IProps, IState> {
   render() {
     return (
       <div>
-        <label htmlFor="setLength">Set the leng of the div </label>
-        <input
-          type="number"
-          name="setLength"
-          id="setLength"
-          min="0"
-          max="500"
-          step="25"
-          value={this.props.length}
-          onChange={e =>
-            this.props.onChangeCallback(
-              this.props.dimension,
-              parseInt(e.target.value)
-            )
-          }
-        />
-        <br />
-
-        <div
-          style={{ width: `${this.props.length}px`, backgroundColor: "blue" }}
-        >
+        <div>
+          <label htmlFor="setLength">Set the leng of the div </label>
+          <input
+            type="number"
+            name="setLength"
+            id="setLength"
+            min="25"
+            max="500"
+            step="25"
+            value={this.props.length}
+            onChange={e =>
+              this.props.onChangeCallback(
+                this.props.dimension,
+                parseInt(e.target.value)
+              )
+            }
+          />
+        </div>
+        <div>
           <p>
-            I'm a {Dimension[this.props.dimension]} configurator of length{" "}
-            {this.props.length}
-          </p>{" "}
+            The {Dimension[this.props.dimension]} is {this.props.length} pixels
+          </p>
+          <p
+            style={{
+              width: `${this.props.length}px`,
+              height: "20px",
+              backgroundColor: "blue"
+            }}
+          ></p>
         </div>
       </div>
     );

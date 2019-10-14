@@ -14,7 +14,7 @@ export default class SquareConfigurator extends Component<
   SqConfProps,
   SqConfState
 > {
-  state = { height: 250, width: 250 };
+  state = { height: 100, width: 100 };
 
   handleOnChange(configuratorName: string, lengthValue: number): void {
     this.setState({ [configuratorName]: lengthValue });
