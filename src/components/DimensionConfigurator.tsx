@@ -1,11 +1,16 @@
 import React, { Component } from "react";
 
-class DimensionConfigurator extends Component<{
-  dimension: "width" | "heigth";
-}> {
-  render() {
-    return <p>I'm a {this.props.dimension} configurator</p>;
-  }
+export enum Dimension {
+  width = "width",
+  height = "height"
 }
 
-export default DimensionConfigurator;
+interface DimConfProps {
+  dimension: Dimension;
+}
+
+export default class DimensionConfigurator extends Component<DimConfProps> {
+  render() {
+    return <p>I'm a {Dimension[this.props.dimension]} configurator</p>;
+  }
+}
