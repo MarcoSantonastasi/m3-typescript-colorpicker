@@ -7,7 +7,6 @@ interface SqConfProps {}
 interface SqConfState {
   width: number;
   height: number;
-  [configuratorName: string]: number;
 }
 
 export default class SquareConfigurator extends Component<
@@ -16,8 +15,16 @@ export default class SquareConfigurator extends Component<
 > {
   state = { height: 100, width: 100 };
 
-  handleOnChange(configuratorName: string, lengthValue: number): void {
-    this.setState({ [configuratorName]: lengthValue });
+  handleOnChange(configuratorDimension: Dimension, lengthValue: number): void {
+    switch (configuratorDimension) {
+      case Dimension.width:
+        this.setState({ [Dimension.width]: lengthValue });
+        break;
+
+      case Dimension.height:
+        this.setState({ [Dimension.height]: lengthValue });
+        break;
+    }
   }
 
   render() {

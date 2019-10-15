@@ -6,7 +6,7 @@ export enum Dimension {
 }
 
 interface IonChangeCallback {
-  (configuratorName: string, lengthValue: number): void;
+  (configuratorName: Dimension, lengthValue: number): void;
 }
 
 interface IProps {
